@@ -17,6 +17,8 @@ Please cite:
     doi = {https://doi.org/10.5391/JKIIS.2024.34.1.15},
     }
 
+And star(★) the repository! Thank you!
+
 # Code philosophy
 Powered by [hydra](https://hydra.cc/docs/intro/) and prototype version of [hideandseek](https://pypi.org/project/hideandseek/).
 
