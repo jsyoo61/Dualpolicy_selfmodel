@@ -1,0 +1,17 @@
+
+exp_name: ''
+
+plot:
+  figsize: [10,10]
+  nrows: 1
+  ncols: 1
+  alpha: 0.3
+  margin_ratio: 0.05
+  colormap: rlgmbu
+  window_ratio: 0.05
+  fontsize: 35
+  fontname: arial
+
+hydra:
+  job:
+    chdir: False
