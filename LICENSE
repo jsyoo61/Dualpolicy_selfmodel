@@ -1,0 +1,21 @@
+This code is shared under the same license as the associated arXiv preprint:
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0).
+
+You may view, download, and share this code for non-commercial use only.
+Modification, redistribution, and commercial use are prohibited without prior written permission.
+For commercial licensing, please contact Jaesung Yoo [https://jaesung.tech.blog, jsyoo61@naver.com]
+
+License details: https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+Please cite: 
+
+    @article{yoo2024dual,
+    title={Dual Policy as Self-Model for Planning},
+    author={Yoo, Jaesung and de la Torre, Fernanda and Yang, Guangyu Robert},
+    journal={Journal of Korean Institute of Intelligent Systems},
+    volume={34},
+    number={1},
+    pages={15--24},
+    year={2024},
+    doi = {https://doi.org/10.5391/JKIIS.2024.34.1.15},
+    }
