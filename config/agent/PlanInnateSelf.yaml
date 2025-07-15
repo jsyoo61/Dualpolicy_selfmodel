@@ -1,0 +1,9 @@
+# @package _global_
+defaults:
+  - common
+  - common_innate
+  - common_plan
+  - models/selfmodel
+
+AgentClass:
+  _target_: agents.PlanInnateSelfAgent

@@ -1,0 +1,7 @@
+# @package _global_
+defaults:
+  - common
+  - common_innate
+
+AgentClass:
+  _target_: agents.InnateAgent

@@ -1,0 +1,26 @@
+# @package _global_
+defaults:
+  - nn_selfmodel: selfmodelnet
+
+agent:
+  selfmodel:
+    TrainerClass:
+      _target_: agent_models.SelfModelTrainer
+      _recursive_: False # Do not instantiate children configs
+      cfg_train:
+        lr: 1e-3
+        batch_size: 512
+        # weight_decay: 1e-3
+        epoch: 200
+      CriterionClass:
+        _target_: agent_models.SelfModelCriterion
+        T: 1
+      DatasetClass:
+        _target_: agent_models.SelfModelDataset
+    NNClass:
+      _target_: agent_models.SelfModelNet
+      n_hidden_list:
+        - 32
+    ModelClass:
+      _target_: agent_models.SelfModel
+    timewindow: ${agent.actorcritic.timewindow}

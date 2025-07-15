@@ -1,0 +1,34 @@
+# @package _global_
+
+# env:
+#   _target_: gym.wrappers.TimeLimit
+env:
+  # _target_: gym.wrappers.TimeLimit
+  _target_: gym.wrappers.TimeLimit
+  env:
+    _target_: environment.SimplePredatorEnvContinuous
+    mapsize:
+      - 10
+      - 10
+    hopsize_agent: 1
+    hopsize_predator: 1
+    threshold_death: 1
+    threshold_reward: 1
+    threshold_spawn: 6
+  max_episode_steps: 100
+
+  # observation_shape: 6
+  # action_shape: 2
+
+
+# Evaluation configs
+eval:
+  figsize:
+    - 10
+    - 10
+  # TODO: set DPI
+  # dpi: 300
+
+  learning_curve:
+    reward_min: -1
+    reward_max: 1

@@ -1,0 +1,21 @@
+# @package _global_
+defaults:
+  - models/PPO_hackedSB
+  # - nn/actorcritic: PPO_hackedSB
+  # - trainers/PPO_hackedSB
+
+AgentClass:
+  _recursive_: False
+
+# Agent configs that should be equal for all types of agents
+agent:
+  discount: 0.99
+  lambda_gae: 0.95
+  buffer_size: 2048
+  new_optimizer: True
+  # workingmemory_size: 1
+# agent_common:
+#   threshold_innate: 5
+#   plan:
+#     max_depth: 4
+#     n_options: 3

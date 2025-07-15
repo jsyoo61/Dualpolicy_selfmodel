@@ -1,0 +1,21 @@
+# @package _global_
+
+agent:
+  worldmodel:
+    TrainerClass:
+      _target_: agent_models.WorldModelTrainer
+      _recursive_: False # Do not instantiate children configs
+      cfg_train:
+        lr: 1e-2
+        batch_size: 256
+        # weight_decay: 1e-3
+        epoch: 100
+      CriterionClass:
+        _target_: agent_models.WorldModelCriterion
+      DatasetClass:
+        _target_: agent_models.WorldModelDataset
+    NNClass:
+      _target_: agent_models.WorldModelNet
+    ModelClass:
+      _target_: agent_models.WorldModel
+    timewindow: 2

@@ -1,0 +1,29 @@
+defaults:
+  - agent: Simple
+  - env: PredatorEnvContinuous
+  - _self_
+
+# Train configs
+train:
+  episode: 500
+  update_interval: ${agent.buffer_size} # Online algorithm Never use previous memory for training
+  # steps: 20_000
+
+# Run configs
+run:
+  random_seed: 0
+  random_strict: False # For convolution operations
+  amp: False # Automatic Mixed Precision for acceleration
+
+# Evaluation configs
+eval:
+  visualize: False
+  episode: 400
+
+debug: False
+
+hydra:
+  job:
+    chdir: True
+
+gpu_id: 0

@@ -1,0 +1,8 @@
+# @package _global_
+
+agent:
+  selfmodel:
+    NNClass:
+      _target_: agent_models.SelfModelNet
+      n_hidden_list:
+        - 32

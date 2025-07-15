@@ -1,0 +1,16 @@
+# @package _global_
+defaults:
+  - nn_actorcritic: linear
+
+agent:
+  actorcritic:
+    cfg_train:
+      lr: 3e-4
+      batch_size: 64
+      epoch: 10
+    TrainerType:
+      _target_: stable_baselines3.PPO
+    timewindow: 1
+    layers:
+      - 64
+      - 64

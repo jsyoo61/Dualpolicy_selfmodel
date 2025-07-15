@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - models/worldmodel
+
+agent:
+  plan:
+    max_depth: 4
+    n_options: 4
+    probability: 0.8
+    type: sparse

@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - common
+  - common_innate
+  - common_plan
+
+AgentClass:
+  _target_: agents.PlanInnateAgent

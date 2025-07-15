@@ -1,0 +1,5 @@
+# @package _global_
+
+agent:
+  threshold_innate: 3
+  innate_type: flight
