@@ -36,14 +36,6 @@ if False:
     print(OmegaConf.to_yaml(cfg))
 
 # %%
-# cfg.exp_name = 'cost'
-# cfg.exp_name = 'cost2'
-# cfg.exp_name = 'cost3'
-# cfg.exp_name = 'cost4'
-# cfg.exp_name = 'cost_selfmodeldouble'
-# cfg.exp_name = 'cost_innate'
-# cfg.exp_name = 'cost_innate_selfmodeldouble'
-
 def sum_of_hiddenlayers(index):
     return [sum(eval(i)) for i in index]
 
@@ -148,7 +140,7 @@ def main(cfg: DictConfig) -> None:
         xlim = ax.get_xlim()
         ax.set_xlim(xlim[0]*cfg.plot.margin_ratio, xlim[-1]/cfg.plot.margin_ratio)
 
-        ax.set_xticks(x)
+        # ax.set_xticks(x)
         # ax.set_xticklabels(df_overrides['agent.actorcritic.layers'].unique())
         title = l_title[i]
         # ax.set_title(title)

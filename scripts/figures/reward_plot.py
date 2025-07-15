@@ -84,29 +84,10 @@ def plot(reward_ratio, df_overrides, path_save, cfg):
         fig.savefig(path_save/(title+'.png'), bbox_inches='tight')
 
 d_legend = {
-'assumption': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'assumption2': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'assumption3': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'assumption4': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'assumption5': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
 'assumption6': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'speed': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
 'speed2': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'mapsize': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'mapsize2': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
 'mapsize3': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'assumption_selfmodeldouble': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'assumption_selfmodeldouble2': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'selfmodeltype2': ['Fully Shared Agent', 'Dual Policy Agent', 'Shared Value Agent', 'Shared Policy Agent'],
-'selfmodeltype2': ['Shared Policy Agent', 'Dual Policy Agent', 'Dual Policy Agent (Action)', 'Dual Policy Agent (Value)'],
-'assumption_innate': ['Simple Agent', 'Innate Agent', 'PlanInnate Agent', 'Dual Policy Agent'],
-'assumption_innatetrigger': ['Innate Agent', 'PlanInnate Agent', 'PlanInnateTrigger Agent', 'Dual Policy Agent'],
-# 'assumption_innatetrigger2': ['Innate Agent', 'PlanInnate Agent', 'PlanInnateTrigger Agent', 'Dual Policy Agent'],
-'assumption_innatetrigger2': ['Innate Agent', 'Innate Shared Agent', 'Innate Shared Trigger Agent', 'Innate Dual Agent'],
-'assumption_innatetrigger3': ['Innate Agent', 'Innate Shared Agent', 'Innate Shared Trigger Agent', 'Innate Dual Agent'],
-# 'assumption_innatetrigger4': ['Innate Agent', 'Innate Shared Agent', 'Innate Shared Trigger Agent', 'Innate Dual Agent'],
 'assumption_innatetrigger4': ['Simple Agent', 'Shared Policy Agent', 'Dual Policy Agent'],
-'assumption_innate_selfmodeldouble': ['Simple Agent', 'Innate Agent', 'PlanInnate Agent', 'Dual Policy Agent'],
 }
 d_shade = {
 'assumption6': 'std',
@@ -146,13 +127,9 @@ def main(cfg: DictConfig) -> None:
     assert (reward_onehot.sum(1)==1).all()
     reward_windowcount = np.apply_along_axis(lambda x: np.convolve(x, v, mode='same'), axis=1, arr=reward_onehot.reshape(-1, n_episode)).reshape(n_experiment, len(reward_types), n_episode)
     reward_ratio = reward_windowcount / reward_windowcount.sum(1)[:,None,:] # Sum over reward type dimension
-    # cum_reward = np.stack([np.cumsum(reward==reward_type, axis=1) for reward_type in reward_types], axis=1)
 
     cfg.legend = d_legend[cfg.exp_name]
     cfg.shade = d_shade.get(cfg.exp_name, 'CI') # Default: CI
-
-    # n=10
-    # n=30
 
     # %%
     if cfg.exp_name == 'assumption_innatetrigger4':
@@ -192,22 +169,4 @@ if False:
     os.chdir('scripts/figures')
     os.getcwd()
     
-# %%
-# cfg.exp_name = 'assumption6'
-# cfg.exp_name = 'speed'
-# cfg.exp_name = 'speed2'
-# cfg.exp_name = 'mapsize3'
-# cfg.exp_name = 'assumption_innatetrigger'
-# cfg.exp_name = 'assumption_innatetrigger2'
-# cfg.exp_name = 'assumption_innatetrigger3'
-# cfg.exp_name = 'assumption_innatetrigger4'
-# cfg.exp_name = 'assumption_selfmodeldouble'
-# cfg.exp_name = 'assumption_selfmodeldouble2'
-# cfg.exp_name = 'selfmodeltype2'
-# cfg.exp_name = 'assumption_innate'
-# cfg.exp_name = 'assumption_innate_selfmodeldouble'
-
-# %%
-
-
 # %%
