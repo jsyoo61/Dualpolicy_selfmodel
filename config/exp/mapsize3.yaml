@@ -1,0 +1,17 @@
+# @package _global_
+# defaults:
+#   - override /env: PredatorEnvContinuous
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      agent: Simple,Plan,PlanSelf
+      run.random_seed: range(0,100)
+      env: PredatorEnvContinuous
+      train.episode: 4000
+      env.env.mapsize: "[10,10],[20,20],[30,30]"
+      env.env.hopsize_agent: 1
+      env.env.hopsize_predator: 1
+  sweep:
+    dir: exp/mapsize3

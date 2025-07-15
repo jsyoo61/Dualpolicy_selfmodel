@@ -1,0 +1,14 @@
+# @package _global_
+# defaults:
+#   - override /env: PredatorEnvContinuous
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      agent: Simple,Plan,PlanSelf
+      run.random_seed: range(0,100)
+      env: PredatorEnvContinuous
+      train.episode: 4000
+  sweep:
+    dir: exp/assumption6

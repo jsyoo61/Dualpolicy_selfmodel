@@ -1,0 +1,15 @@
+# @package _global_
+# defaults:
+#   - override /env: PredatorEnvContinuous
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      agent: Innate,PlanInnate,PlanInnateTrigger,PlanInnateSelf
+      agent.innate_type: flight,freeze
+      run.random_seed: range(0,100)
+      env: PredatorEnvContinuous
+      train.episode: 4000
+  sweep:
+    dir: exp/assumption_innatetrigger4

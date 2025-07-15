@@ -1,0 +1,16 @@
+# @package _global_
+# defaults:
+#   - override /env: PredatorEnvContinuous
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      agent: PlanSelf
+      env: PredatorEnvContinuous
+      agent.selfmodel.NNClass.n_hidden_list: "[32],[64,64],[128,128,128,128]"
+      agent.actorcritic.layers: "[32],[64,64],[128,128,128,128]"
+      run.random_seed: range(0,100)
+      train.episode: 4000
+  sweep:
+    dir: exp/cost4
