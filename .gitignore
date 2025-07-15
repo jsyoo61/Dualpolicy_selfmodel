@@ -139,7 +139,6 @@ dmypy.json
 /exp
 *.p
 *.pt
-*.png
 
 /analysis/*/
 nohup.out

@@ -91,7 +91,6 @@ d_legend = {
 }
 d_shade = {
 'assumption6': 'std',
-'mapsize3': 'std'
 }
 agent_order = ['Simple', 'Plan', 'PlanSelf', 'Innate', 'PlanInnate', 'PlanInnateTrigger', 'PlanInnateSelf', 'PlanSelfPolicy', 'PlanSelfValue']
 

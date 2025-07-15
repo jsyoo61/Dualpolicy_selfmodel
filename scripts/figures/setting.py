@@ -3,6 +3,7 @@ from pathlib import Path
 
 from omegaconf import OmegaConf, DictConfig
 import matplotlib.pyplot as plt
+import numpy as np
 
 import analysis.test as test
 
